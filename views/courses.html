@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursos - Projeto Educacional</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Gerenciamento de Cursos</h1>
+      <nav>
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/courses">Cursos</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Cadastrar novo curso</h2>
+      <form id="courseForm">
+        <input type="text" id="courseName" placeholder="Nome do Curso" required>
+        <input type="text" id="courseDuration" placeholder="Duração" required>
+        <input type="text" id="courseCoordinator" placeholder="Coordenador" required>
+        <button type="submit">Cadastrar</button>
+      </form>
+
+      <h2>Lista de Cursos</h2>
+      <ul id="courseList"></ul>
+    </main>
+  </div>
+
+  <script src="/js/app.js"></script>
+</body>
+</html>

@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Gerenciamento de Cursos</h1>
+      <h1>Gerenciamento de Entidades</h1>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -21,8 +21,9 @@
       </nav>
     </header>
     <main>
-      
-      <h2>Professores</h2>
+
+      <section class="form-section">
+      <h2>Cadastro de Professores</h2>
       
       <form id="teacherForm">
         <input type="text" id="teacherName" placeholder="Nome do Professor" required />
@@ -30,9 +31,13 @@
         <input type="text" id="teacherKnowledgeArea" placeholder="Área de Conhecimento" required />
         <button type="submit">Cadastrar Professor</button>
       </form>
-
-      <h2>Lista de Professores</h2>
-      <ul id="teacherList"></ul>
+      </section>
+      
+      <section class="list-section">
+        <h2>Lista de Professores</h2>
+        <ul id="teacherList"></ul>
+      </section>
+      
     </main>
   </div>
 

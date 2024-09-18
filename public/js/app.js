@@ -1,8 +1,8 @@
 // Credenciais do Back4App
 const BACK4APP_API_URL = 'https://parseapi.back4app.com/classes/Course';
 const BACK4APP_HEADERS = {
-  'X-Parse-Application-Id': 'MzNwrAESFKCmnIKByGsd2Q7b2ZcIqD2yq6PR2bBV',  // Substitua por seu Application ID
-  'X-Parse-REST-API-Key': '10YhxYRKR67BQzFd05sDYMqovXwCfQjnngUzOYzu',      // Substitua por sua REST API Key
+  'X-Parse-Application-Id': 'MzNwrAESFKCmnIKByGsd2Q7b2ZcIqD2yq6PR2bBV',
+  'X-Parse-REST-API-Key': '10YhxYRKR67BQzFd05sDYMqovXwCfQjnngUzOYzu',
   'Content-Type': 'application/json'
 };
 
@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
       courses.forEach(course => {
         const li = document.createElement('li');
         li.innerHTML = `
-          ${course.name} - ${course.duration} - ${course.coordinator}
+          Curso: ${course.name} (${course.duration} horas) - Coordendor: ${course.coordinator}
           <button onclick="deleteCourse('${course.objectId}')">Remover</button>
         `;
         courseList.appendChild(li);

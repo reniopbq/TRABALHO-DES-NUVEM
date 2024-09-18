@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Gerenciamento de Cursos</h1>
+      <h1>Gerenciamento de Entidades</h1>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -21,8 +21,9 @@
       </nav>
     </header>
     <main>
-
-      <h2>Alunos</h2>
+      
+      <section class="form-section">
+      <h2>Cadastrar Alunos</h2>
 
       <form id="studentForm">
         <input type="text" id="studentName" placeholder="Nome do Aluno" required />
@@ -30,9 +31,13 @@
         <input type="text" id="studentGrade" placeholder="Média" required />
         <button type="submit">Cadastrar Aluno</button>
       </form>
+      </section>
 
-      <h2>Lista de Alunos</h2>
-      <ul id="studentList"></ul>
+      <section class="list-section">
+        <h2>Lista de Alunos</h2>
+        <ul id="studentList"></ul>
+      </section>
+      
     </main>
   </div>
 

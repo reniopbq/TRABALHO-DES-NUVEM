@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Gerenciamento de Cursos</h1>
+      <h1>Gerenciamento de Entidades</h1>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -22,7 +22,8 @@
     </header>
     <main>
 
-      <h2>Turmas</h2>
+      <section class="form-section">
+      <h2>Cadastro de Turmas</h2>
 
       <form id="classForm">
         <input type="text" id="classYear" placeholder="Ano da turma" required />
@@ -30,9 +31,13 @@
         <input type="text" id="classStudents" placeholder="Quantidade de alunos" required />
         <button type="submit">Cadastrar Turma</button>
       </form>
-
-      <h2>Lista de Turmas</h2>
-      <ul id="classList"></ul>
+      </section>
+      
+      <section class="list-section">
+        <h2>Lista de Turmas</h2>
+        <ul id="classList"></ul>
+      </section>
+      
     </main>
   </div>
 

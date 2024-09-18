@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
       turmas.forEach(turma => {
         const li = document.createElement('li');
         li.innerHTML = `
-          ${turma.course} (Year: ${turma.year}) - Quantidade de alunos = ${turma.students}
+          ${turma.course} (Ano: ${turma.year}) - Quantidade de alunos = ${turma.students}
           <button onclick="deleteClass('${turma.objectId}')">Remover</button>
         `;
         classList.appendChild(li);

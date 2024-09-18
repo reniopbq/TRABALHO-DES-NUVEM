@@ -9,7 +9,7 @@
 <body>
   <div class="container">
     <header>
-      <h1>Gerenciamento de Cursos</h1>
+      <h1>Gerenciamento de Entidades</h1>
       <nav>
         <ul>
           <li><a href="/">Home</a></li>
@@ -21,16 +21,22 @@
       </nav>
     </header>
     <main>
+      <section class="form-section">
       <h2>Cadastrar novo curso</h2>
       <form id="courseForm">
         <input type="text" id="courseName" placeholder="Nome do Curso" required>
-        <input type="text" id="courseDuration" placeholder="Duração" required>
+        <input type="text" id="courseDuration" placeholder="Duração (horas)" required>
         <input type="text" id="courseCoordinator" placeholder="Coordenador" required>
         <button type="submit">Cadastrar</button>
       </form>
+      </section>
 
-      <h2>Lista de Cursos</h2>
-      <ul id="courseList"></ul>
+      <section class="list-section">
+        <h2>Lista de Cursos</h2>
+        <ul id="courseList"></ul>
+      </section>
+      
+      
     </main>
   </div>
 

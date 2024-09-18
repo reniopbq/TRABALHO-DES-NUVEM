@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   //Função cadastrar professor
-  document.getElementById('teacherForm').addEventListener('submit', async (e) => {
+  teacherForm.addEventListener('submit', async (e) => {
   e.preventDefault();
 
   const name = document.getElementById('teacherName').value;
@@ -61,7 +61,7 @@ document.addEventListener('DOMContentLoaded', () => {
       body: JSON.stringify({ name, degree, knowledgeArea }),
     });
 
-    document.getElementById('teacherForm').reset();
+    teacherForm.reset();
     loadTeachers();  // Carrega a lista atualizada
   } catch (error) {
     console.error('Erro ao cadastrar professor:', error);

@@ -70,7 +70,7 @@ app.get('/professor', (req, res) => {
 
 // API para obter professores
 app.get('/api/professor', (req, res) => {
-  res.json(profesor);
+  res.json(professor);
 });
 
 // API para adicionar um professor
@@ -105,6 +105,47 @@ app.delete('/api/professor/:id', (req, res) => {
   professor = professor.filter(professor => professor.id !== professorId);
   res.json({ message: 'Professor removido com sucesso' });
 });
+
+/*
+ROTAS E API PARA ALUNOS
+*/
+
+// Rota para a página de alunos
+app.get('/estudante', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'estudante.html'));
+});
+
+// API para obter alunos
+app.get('/api/estudante', (req, res) => {
+  res.json(estudante);
+});
+
+// API para adicionar um alunos
+app.post('/api/estudante', (req, res) => {
+  const newStudent = {
+    id: estudante.length + 1,
+    name: req.body.name,
+    registration: req.body.registration,
+    grade: req.body.grade,
+  };
+  estudante.push(newStudent);
+  res.json(newStudent);
+});
+
+// API para editar um aluno
+app.put('/api/estudante/:id', (req, res) => {
+  const studentId = parseInt(req.params.id);
+  const updatedStudent = {
+    id: studentId,
+    name: req.body.name,
+    registration: req.body.registration,
+    grade: req.body.grade,
+  };
+
+  estudante = estudante.map(estudante => estudante.id === studentId ? updatedStudent : estudante);
+  res.json(updatedStudent);
+});
+
 
 
 // Iniciar o servidor

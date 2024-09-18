@@ -12,6 +12,10 @@ app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'index.html'));
 });
 
+/*
+ROTAS E API PARA CURSOS
+*/
+
 // Rota para a página de cursos
 app.get('/courses', (req, res) => {
   res.sendFile(path.join(__dirname, 'views', 'courses.html'));
@@ -54,6 +58,54 @@ app.delete('/api/courses/:id', (req, res) => {
   courses = courses.filter(course => course.id !== courseId);
   res.json({ message: 'Curso removido com sucesso' });
 });
+
+/*
+ROTAS E API PARA PROFESSORES
+*/
+
+// Rota para a página de professores
+app.get('/professor', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'professor.html'));
+});
+
+// API para obter professores
+app.get('/api/professor', (req, res) => {
+  res.json(profesor);
+});
+
+// API para adicionar um professor
+app.post('/api/professor', (req, res) => {
+  const newProfessor = {
+    id: professor.length + 1,
+    name: req.body.name,
+    degree: req.body.degree,
+    knowledgeArea: req.body.knowledgeArea,
+  };
+  professor.push(newProfessor);
+  res.json(newProfessor);
+});
+
+// API para editar um professor
+app.put('/api/professor/:id', (req, res) => {
+  const professorId = parseInt(req.params.id);
+  const updatedProfessor = {
+    id: professorId,
+    name: req.body.name,
+    degree: req.body.degree,
+    knowledgeArea: req.body.knowledgeArea,
+  };
+
+  professor = professor.map(professor => professor.id === professorId ? updatedProfessor : professor);
+  res.json(updatedProfessor);
+});
+
+// API para deletar um professor
+app.delete('/api/professor/:id', (req, res) => {
+  const professorId = parseInt(req.params.id);
+  professor = professor.filter(professor => professor.id !== professorId);
+  res.json({ message: 'Professor removido com sucesso' });
+});
+
 
 // Iniciar o servidor
 const PORT = 3000;

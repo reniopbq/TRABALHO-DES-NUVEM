@@ -19,19 +19,21 @@
       </nav>
     </header>
     <main>
-      <h2>Cadastrar novo curso</h2>
-      <form id="courseForm">
-        <input type="text" id="courseName" placeholder="Nome do Curso" required>
-        <input type="text" id="courseDuration" placeholder="Duração" required>
-        <input type="text" id="courseCoordinator" placeholder="Coordenador" required>
-        <button type="submit">Cadastrar</button>
+      
+      <h2>Professores</h2>
+      
+      <form id="teacherForm">
+        <input type="text" id="teacherName" placeholder="Nome do Professor" required />
+        <input type="text" id="teacherDegree" placeholder="Grau de Escolaridade" required />
+        <input type="text" id="teacherKnowledgeArea" placeholder="Área de Conhecimento" required />
+        <button type="submit">Cadastrar Professor</button>
       </form>
 
-      <h2>Lista de Cursos</h2>
-      <ul id="courseList"></ul>
+      <h2>Lista de Professores</h2>
+      <ul id="teacherList"></ul>
     </main>
   </div>
 
-  <script src="/js/app.js"></script>
+  <script src="/js/professor.js"></script>
 </body>
 </html>

@@ -146,7 +146,59 @@ app.put('/api/estudante/:id', (req, res) => {
   res.json(updatedStudent);
 });
 
+// API para deletar um aluno
+app.delete('/api/estudante/:id', (req, res) => {
+  const studentId = parseInt(req.params.id);
+  estudante = estudante.filter(estudante => estudante.id !== studentId);
+  res.json({ message: 'Aluno removido com sucesso' });
+});
 
+/*
+ROTAS E API PARA TURMAS
+*/
+
+// Rota para a página de turmas
+app.get('/turma', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'turma.html'));
+});
+
+// API para obter turmas
+app.get('/api/turma', (req, res) => {
+  res.json(turma);
+});
+
+// API para adicionar uma turma
+app.post('/api/turma', (req, res) => {
+  const newClass = {
+    id: turma.length + 1,
+    year: req.body.year,
+    course: req.body.course,
+    students: req.body.students,
+  };
+  turma.push(newClass);
+  res.json(newClass);
+});
+
+// API para editar uma turma
+app.put('/api/turma/:id', (req, res) => {
+  const classId = parseInt(req.params.id);
+  const updatedClass = {
+    id: classId,
+    year: req.body.year,
+    course: req.body.course,
+    students: req.body.students,
+  };
+
+  turma = turma.map(turma => turma.id === studentId ? updatedClass : turma);
+  res.json(updatedClass);
+});
+
+// API para deletar uma turma
+app.delete('/api/turma/:id', (req, res) => {
+  const classId = parseInt(req.params.id);
+  turma = turma.filter(turma => turma.id !== classId);
+  res.json({ message: 'Turma removida com sucesso' });
+});
 
 // Iniciar o servidor
 const PORT = 3000;
